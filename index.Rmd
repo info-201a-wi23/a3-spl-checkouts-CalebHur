@@ -7,9 +7,7 @@ output: html_document
 
 An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
 
-Hello, this is a test.
-
-# I am trying to make sure this works >:(
+# I think I know how to make it work :D
 
 ### Summary Information
 
