@@ -13,13 +13,13 @@ Over the past decade, the Seattle Public Library has meticulously gathered a ple
 
 I have discovered that there has, indeed, been a steady rise in popularity for digital library material. I isolated e-books and audio books as two of the most dominant forms of the digital medium and observed the former's popularity increased by roughly 12,725 checkouts per month while the latter increased by roughly 9,013 checkouts per month since Jan 2013 until Jan 2020.
 
-I then wondered if physical library material had a similar increase in popularity. I isolated traditional books, sound discs, and video discs as three popular forms of the physical medium and found their popularity has actually *decreased* over the 7-year period. For traditional books, there has been a slight decrease by roughly 2,825 checkouts per year; for sound discs, 6,061; for video discs, 15,138.
+I then wondered if physical library material had a similar increase in popularity. I isolated traditional books, sound discs, and video discs as three popular forms of the physical medium and found their popularity has actually *decreased* over the 7-year period. For traditional books, there has been a slight decrease by roughly 2,825 checkouts per month; for sound discs, 6,061; for video discs, 15,138.
 
-So then, I wondered if this trend persisted across all forms of digital and physical media. I found that a much starker difference was shown with the physical medium decreasing by 23,883 checkouts per year and the digital medium increasing by 23,017 checkouts per year over the same time period. It seems that there are specific reasons why digital mediums are preferred over physical ones.
+So then, I wondered if this trend persisted across all forms of digital and physical media. I found that a much starker difference was shown with the physical medium decreasing by 23,883 checkouts per month and the digital medium increasing by 23,017 checkouts per month over the same time period. It seems that there are specific reasons why digital mediums are preferred over physical ones.
 
 In particular, a great shift between the two mediums was exhibited in early 2020 due to the COVID-19 pandemic. The Seattle Public Library was forced to prohibit physical checkouts, but continued to operate online. This decision had allowed digital media to skyrocket, especially for e-books; this online reading material soared by 16,196 checkouts within the month of March, the greatest increase it has ever seen. 
 
-As people became more accustomed to the pandemic, however, they began coming to the Seattle Public Library again. It seems avid library-goers were excited for the restrictions to die down, surging traditional book checkouts by 19,453 within the month of April. Prior to COVID-19, physical content was checked out far more than digital content by nearly 150% (300,733 checkouts vs 204,991 checkouts). Today, physical content dwindles in comparison to digital content by about 65% (184,081 checkouts vs 289,453 checkouts). 
+As people became more accustomed to the pandemic, however, they began coming to the Seattle Public Library again. It seems avid library-goers were excited for the restrictions to die down, surging traditional book checkouts by 19,453 within the month of April. Prior to COVID-19, physical content was checked out far more than digital content by nearly 150% (300,733 checkouts vs 204,991 checkouts on Jan 2020). Today, physical content dwindles in comparison to digital content by about 65% (184,081 checkouts vs 289,453 checkouts on Jan 2023). 
 
 Going forward, it would seem an emphasis on the digital medium would benefit the Seattle Public Library, particularly e-books, as it has maintained its boosted popularity since COVID-19 to become the most consumed form of library material. 
 
@@ -27,19 +27,20 @@ Going forward, it would seem an emphasis on the digital medium would benefit the
 
 ### The Dataset
 
-As mentioned, the Seattle Public Library collected and published the data used for these findings. The data consists of 12 parameters: UsageClass, either physical or digital media; CheckoutType, the medium in which the material was checked out through; MaterialType, the specific form of the content (ebook, video disc, etc.); CheckoutYear, CheckoutMonth, Title, ISBN, Creator, Subjects, Publisher PublicationYear.
+As mentioned, the Seattle Public Library collected and published the data used for these findings. The data consists of 4224916 observations and 12 distinct features: UsageClass, either physical or digital media; CheckoutType, the medium in which the material was checked out through; MaterialType, the specific form of the content (ebook, video disc, etc.); CheckoutYear, CheckoutMonth, Title, ISBN, Creator, Subjects, Publisher PublicationYear.
 
-The data was first collected by an artist and professor since 2005, working independently for an art installation involving library checkouts. However, the first initiative to create an open source database for previously private government resources was under the presidency of Barack Obama. Ever since 2017, the library checkouts (including those collected by the professor) have been documented and shared publicly for use.
+The data was first collected in 2005 by an artist who was working independently for an art installation involving library checkouts. However, the first initiative to create an open source database for previously private government resources was under the presidency of Barack Obama. Ever since 2017, library checkouts (including those collected by the professor) have been documented and shared publicly for use.
 
 The most notable ethical question has to do with privacy; library-goers should have the right to checkout reading material without the worry of being flagged or spied on. In fact, the Seattle Public Library was one of the first libraries to implement sharing data due to the uneasy nature of publicizing personal information. The SPL got around this problem by de-identifying the checkouts so that no piece of data can be tied to one person.
 
-There are a number of limitations with this data; because the checkout data is de-identified from the library-goer, it is difficult to draw meaningful conclusions from checkout data alone. For instance, digital content can be checked out by several people at the same time; yet, this is not accounted for in the data as an effort to remove the people from the equation. In order to respect privacy, a price had to be paid in the form of user interaction.
+There are a number of limitations with this data; because the checkout data is de-identified from the library-goer, it is difficult to draw meaningful conclusions from checkout data alone. For instance, digital content can be checked out by several people at the same time; yet, this is not accounted for in the data as an effort to remove the people from the equation. In order to respect privacy, a price had to be paid in the form less applicable data.
 
 
 
 ### SPL Checkouts of E-Books and Audiobooks from 2013 to 2023
 
-Much of the motivation for the graph below is explained above in the summary. The most notable pattern is that digital content has been on the rise since 2013.
+Much of the motivation for the graph below is explained above in the summary. The most notable pattern is that digital content has been on the rise ever since 2013. There is a noticeable peak at the start of 2020 due the COVID-19 pandemic, a point of equal interest with the graph below.
+
 ``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart1_example.R")}
 ```
 
@@ -47,7 +48,8 @@ Much of the motivation for the graph below is explained above in the summary. Th
 
 ### SPL Checkouts of Books, Sound Discs, and Video Discs from 2013 to 2023
 
-Much of the motivation for the graph below is explained above in the summary. The most notable pattern is that physical content has been decreasing since 2013 until 2020 where all forms of content drop to 0. After which, the popularity of books soars above those of sound discs and video discs which struggle to recover significantly.
+Much of the motivation for the graph below is explained above in the summary. The most notable pattern is that physical content has been decreasing since 2013 until 2020 where all forms of content suddenly drop to 0. After which, the popularity of books soars above those of sound discs and video discs which struggle to recover significantly.
+
 ``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart2_example.R")}
 ```
 
@@ -55,6 +57,7 @@ Much of the motivation for the graph below is explained above in the summary. Th
 
 ### SPL Checkouts of Physical and Digital Media from 2013 to 2023
 
-Much of the motivation for the graph below is explained above in the summary.
+Much of the motivation for the graph below is explained above in the summary. It is clear that the start of the COVID-19 pandemic was a dramamtic shift between the dominance of digital media over physical media.
+
 ``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart3_example.R")}
 ```
